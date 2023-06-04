@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import placeRoutes from './routes/place';
+import authentifiactionRoutes from './routes/authentification';
 
 dotenv.config();
 
@@ -25,5 +26,6 @@ app.options('*', cors(origin));
 
 // Routes
 app.use('/places', placeRoutes);
+app.use('/authentification', authentifiactionRoutes);
 
 export default app;
