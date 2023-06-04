@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import placeRoutes from './routes/place';
+import reviewRoutes from './routes/review';
 
 dotenv.config();
 
@@ -21,9 +22,10 @@ const origin = {
 app.use(cors(origin));
 app.options('*', cors(origin));
 
-// app.use(express.json());
+app.use(express.json());
 
 // Routes
 app.use('/places', placeRoutes);
+app.use('/reviews', reviewRoutes);
 
 export default app;
