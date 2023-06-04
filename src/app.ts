@@ -5,6 +5,7 @@ import cors from 'cors';
 
 import placeRoutes from './routes/place';
 import reviewRoutes from './routes/review';
+import authenticationRoutes from './routes/authentication';
 
 dotenv.config();
 
@@ -27,5 +28,6 @@ app.use(express.json());
 // Routes
 app.use('/places', placeRoutes);
 app.use('/reviews', reviewRoutes);
+app.use('/authentication', authenticationRoutes);
 
 export default app;
