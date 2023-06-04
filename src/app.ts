@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import placeRoutes from './routes/place';
-import authentifiactionRoutes from './routes/authentification';
+import authenticationRoutes from './routes/authentication';
 
 dotenv.config();
 
@@ -22,10 +22,10 @@ const origin = {
 app.use(cors(origin));
 app.options('*', cors(origin));
 
-// app.use(express.json());
+app.use(express.json());
 
 // Routes
 app.use('/places', placeRoutes);
-app.use('/authentification', authentifiactionRoutes);
+app.use('/authentication', authenticationRoutes);
 
 export default app;
